@@ -10,6 +10,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   )
-  category.associate = function (models) {}
+  category.associate = function (models) {
+    category.hasMany(models.product)
+  }
   return category
 }

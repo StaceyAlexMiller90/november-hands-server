@@ -14,6 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   )
-  collection.associate = function (models) {}
+  collection.associate = function (models) {
+    collection.hasMany(models.product)
+  }
   return collection
 }

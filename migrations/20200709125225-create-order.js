@@ -16,14 +16,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      billingAddressId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
-      shippingAddressId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
       status: {
         type: Sequelize.STRING,
         allowNull: false

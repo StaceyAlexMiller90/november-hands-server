@@ -27,6 +27,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   )
-  user.associate = function (models) {}
+  user.associate = function (models) {
+    user.hasMany(models.address, {
+      through: 'userAddresses',
+      foreignKey: 'addressId'
+    })
+    user.hasMany(models.order, {
+      through: 'orderItems',
+      foreignKey: 'userId'
+    })
+  }
   return user
 }

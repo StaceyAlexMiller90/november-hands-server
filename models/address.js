@@ -38,6 +38,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   )
-  address.associate = function (models) {}
+  address.associate = function (models) {
+    address.belongsToMany(models.user, {
+      through: 'userAddresses',
+      foreignKey: 'userId'
+    }),
+      address.belongsTo(models.order)
+  }
   return address
 }

@@ -12,6 +12,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      image: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       price: {
         type: Sequelize.DECIMAL(10, 2),
         allowNull: false
@@ -21,14 +25,6 @@ module.exports = {
         allowNull: false
       },
       stockQuantity: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
-      categoryId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
-      collectionId: {
         type: Sequelize.INTEGER,
         allowNull: false
       }

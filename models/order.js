@@ -26,6 +26,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   )
-  order.associate = function (models) {}
+  order.associate = function (models) {
+    order.hasOne(models.address, { as: 'billingAddressId' })
+    order.hasOne(models.address, { as: 'shippingAddressId' })
+    order.belongsTo(models.user)
+  }
   return order
 }

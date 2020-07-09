@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const discount = sequelize.define(
     'discount',
     {
-      status: {
+      description: {
         type: DataTypes.STRING,
         allowNull: false
       },
@@ -14,6 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   )
-  discount.associate = function (models) {}
+  discount.associate = function (models) {
+    discount.belongsToMany(models.product)
+  }
   return discount
 }

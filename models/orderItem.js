@@ -3,14 +3,6 @@ module.exports = (sequelize, DataTypes) => {
   const orderitems = sequelize.define(
     'orderitems',
     {
-      orderId: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
-      productId: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
       quantity: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -18,6 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   )
-  orderitems.associate = function (models) {}
+  orderitems.associate = function (models) {
+    orderitems.belongsTo(models.order)
+    orderitems.belongsTo(models.product)
+  }
   return orderitems
 }
