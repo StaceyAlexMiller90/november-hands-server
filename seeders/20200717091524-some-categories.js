@@ -16,7 +16,7 @@ module.exports = {
           updatedAt: new Date()
         },
         {
-          name: 'Bowls',
+          name: 'Plates',
           createdAt: new Date(),
           updatedAt: new Date()
         }

@@ -27,10 +27,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false
       },
-      categoryId: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
       collectionId: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -39,7 +35,6 @@ module.exports = (sequelize, DataTypes) => {
     {}
   )
   productColor.associate = function (models) {
-    productColor.belongsTo(models.category)
     productColor.belongsTo(models.collection)
     productColor.belongsTo(models.product)
     productColor.belongsTo(models.color)

@@ -12,7 +12,7 @@ const router = new Router()
 // See all products
 router.get('/', async (req, res, next) => {
   const products = await Product.findAll({
-    include: [{ model: ProductColor, include: [Color, Image, Collection, Category, Discount] }]
+    include: [Category, { model: ProductColor, include: [Color, Image, Collection, Discount] }]
   })
   res.send({ products: products })
 })

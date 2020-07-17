@@ -6,11 +6,16 @@ module.exports = (sequelize, DataTypes) => {
       name: {
         type: DataTypes.STRING,
         allowNull: false
+      },
+      categoryId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
       }
     },
     {}
   )
   product.associate = function (models) {
+    product.belongsTo(models.category)
     product.belongsToMany(models.color, {
       through: 'productColors',
       foreignKey: 'productId'

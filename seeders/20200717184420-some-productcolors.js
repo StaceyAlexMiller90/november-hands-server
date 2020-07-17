@@ -12,7 +12,6 @@ module.exports = {
           price: 50,
           active: true,
           stockQuantity: 10,
-          categoryId: 1,
           collectionId: 2,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -24,7 +23,6 @@ module.exports = {
           price: 50,
           active: true,
           stockQuantity: 20,
-          categoryId: 1,
           collectionId: 3,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -36,7 +34,6 @@ module.exports = {
           price: 50,
           active: true,
           stockQuantity: 10,
-          categoryId: 1,
           collectionId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -48,7 +45,6 @@ module.exports = {
           price: 25,
           active: true,
           stockQuantity: 15,
-          categoryId: 1,
           collectionId: 2,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -60,7 +56,6 @@ module.exports = {
           price: 30,
           active: true,
           stockQuantity: 15,
-          categoryId: 1,
           collectionId: 2,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -72,7 +67,6 @@ module.exports = {
           price: 10,
           active: true,
           stockQuantity: 15,
-          categoryId: 1,
           collectionId: 3,
           createdAt: new Date(),
           updatedAt: new Date()

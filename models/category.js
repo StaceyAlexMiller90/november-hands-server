@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   )
   category.associate = function (models) {
-    category.hasMany(models.productColor)
+    category.hasMany(models.product)
   }
   return category
 }

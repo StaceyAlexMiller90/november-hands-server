@@ -7,16 +7,19 @@ module.exports = {
       [
         {
           name: 'Side Plate',
+          categoryId: 3,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Mug',
+          categoryId: 2,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Bucket Vase',
+          categoryId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         }
