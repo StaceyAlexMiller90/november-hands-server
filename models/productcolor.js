@@ -1,6 +1,6 @@
 'use strict'
 module.exports = (sequelize, DataTypes) => {
-  const product = sequelize.define(
+  const productColor = sequelize.define(
     'productColor',
     {
       productId: {
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true
       },
       price: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: false
       },
       active: {
@@ -46,10 +46,10 @@ module.exports = (sequelize, DataTypes) => {
       through: 'orderItems',
       foreignKey: 'productColorId'
     })
-    productColor.hasMany(models.image, {
+    productColor.belongsToMany(models.image, {
       through: 'productColorImages',
       foreignKey: 'productColorId'
     })
   }
-  return product
+  return productColor
 }

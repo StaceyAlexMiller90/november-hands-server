@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   )
   discount.associate = function (models) {
-    discount.belongsToMany(models.productColor)
+    discount.belongsTo(models.productColor)
   }
   return discount
 }

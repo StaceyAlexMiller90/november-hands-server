@@ -1,6 +1,6 @@
 'use strict'
 module.exports = (sequelize, DataTypes) => {
-  const useraddress = sequelize.define(
+  const userAddress = sequelize.define(
     'userAddress',
     {
       userId: {
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   )
-  useraddress.associate = function (models) {
+  userAddress.associate = function (models) {
     userAddress.belongsTo(models.user)
     userAddress.belongsTo(models.address)
   }
