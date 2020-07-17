@@ -11,18 +11,6 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
         allowNull: false
-      },
-      price: {
-        type: Sequelize.DECIMAL(10, 2),
-        allowNull: false
-      },
-      active: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false
-      },
-      stockQuantity: {
-        type: Sequelize.INTEGER,
-        allowNull: false
       }
     })
   },

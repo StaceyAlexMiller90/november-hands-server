@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'productId'
     })
     productColor.hasMany(models.image, {
-      through: 'productColorImage',
+      through: 'productColorImages',
       foreignKey: 'productColorId'
     })
   }
