@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
     order.hasOne(models.address, { as: 'billingAddressId' })
     order.hasOne(models.address, { as: 'shippingAddressId' })
     order.belongsTo(models.user)
+    order.hasMany(models.productColor, {
+      through: 'orderItems',
+      foreignKey: 'orderId'
+    })
   }
   return order
 }

@@ -1,18 +1,10 @@
 'use strict'
 module.exports = (sequelize, DataTypes) => {
   const product = sequelize.define(
-    'product',
+    'productColor',
     {
       name: {
         type: DataTypes.STRING,
-        allowNull: false
-      },
-      colorName: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      price: {
-        type: DataTypes.DECIMAL(10, 2),
         allowNull: false
       },
       discountId: {
@@ -38,21 +30,17 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   )
-  product.associate = function (models) {
-    product.belongsTo(models.category)
-    product.belongsTo(models.collection)
-    product.hasOne(models.discount)
-    product.belongsToMany(models.order, {
+  productColor.associate = function (models) {
+    productColor.belongsTo(models.category)
+    productColor.belongsTo(models.collection)
+    productColor.hasOne(models.discount)
+    productColor.belongsToMany(models.order, {
       through: 'orderItems',
       foreignKey: 'productId'
     })
-    product.hasMany(models.image, {
-      through: 'productImage',
-      foreignKey: 'productId'
-    })
-    product.hasMany(models.color, {
-      through: 'productColor',
-      foreignKey: 'productId'
+    productColor.hasMany(models.image, {
+      through: 'productColorImage',
+      foreignKey: 'productColorId'
     })
   }
   return product

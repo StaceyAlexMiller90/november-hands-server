@@ -3,6 +3,14 @@ module.exports = (sequelize, DataTypes) => {
   const orderitems = sequelize.define(
     'orderitems',
     {
+      orderId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      productColorId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
       quantity: {
         type: DataTypes.INTEGER,
         allowNull: false
