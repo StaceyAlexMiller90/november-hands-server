@@ -28,6 +28,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      country: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       stateProvinceRegion: {
         type: Sequelize.STRING,
         allowNull: true
@@ -37,8 +41,16 @@ module.exports = {
         allowNull: false
       },
       phoneNumber: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: true
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     })
   },

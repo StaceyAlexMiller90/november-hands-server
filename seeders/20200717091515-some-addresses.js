@@ -1,24 +1,46 @@
-'use strict';
+'use strict'
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+    return queryInterface.bulkInsert(
+      'addresses',
+      [
+        {
+          addressLine1: 'Kostverlorenstraat 25-2',
+          city: 'Amsterdam',
+          country: 'Netherlands',
+          stateProvinceRegion: 'North Holland',
+          zipCode: '1052 GT',
+          phoneNumber: '0031657251207',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          addressLine1: '57 Shinglewell Road',
+          city: 'Erith',
+          country: 'England',
+          stateProvinceRegion: 'Kent',
+          zipCode: 'DA8 1NF',
+          phoneNumber: '00447777777777',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          addressLine1: 'Spaarndammerdijk 264',
+          city: 'Amsterdam',
+          country: 'Netherlands',
+          stateProvinceRegion: 'North Holland',
+          zipCode: '1013 AP',
+          phoneNumber: '00447777777777',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }
+      ],
+      {}
+    )
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    return queryInterface.bulkDelete('addresses', null, {})
   }
-};
+}

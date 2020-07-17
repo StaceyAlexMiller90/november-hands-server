@@ -3,20 +3,26 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      'images',
+      'productColorImages',
       [
         {
-          path: 'https://res.cloudinary.com/november-hands/image/upload/v1594994152/Products/IMG_5695_1_uzu8qz.jpg',
+          productColorId: 1,
+          imageId: 3,
+          imageViewOrder: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          path: 'https://res.cloudinary.com/november-hands/image/upload/v1594994144/Products/150589706_j0azq4.jpg',
+          productColorId: 4,
+          imageId: 2,
+          imageViewOrder: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          path: 'https://res.cloudinary.com/november-hands/image/upload/v1594994141/Products/128710061_w458mh.jpg',
+          productColorId: 6,
+          imageId: 1,
+          imageViewOrder: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         }
@@ -26,6 +32,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('images', null, {})
+    return queryInterface.bulkDelete('productColorImages', null, {})
   }
 }

@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.addColumn('productImages', 'imageId', {
+    await queryInterface.addColumn('productColorImages', 'imageId', {
       type: Sequelize.INTEGER,
       allowNull: true,
       references: {
@@ -12,7 +12,7 @@ module.exports = {
       onUpdate: 'CASCADE',
       onDelete: 'CASCADE'
     }),
-      await queryInterface.addColumn('productImages', 'productColorId', {
+      await queryInterface.addColumn('productColorImages', 'productColorId', {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: {
@@ -25,7 +25,7 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.removeColumn('productImages', 'imageId')
-    await queryInterface.removeColumn('productImages', 'productColorId')
+    await queryInterface.removeColumn('productColorImages', 'imageId')
+    await queryInterface.removeColumn('productColorImages', 'productColorId')
   }
 }

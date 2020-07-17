@@ -3,13 +3,21 @@ module.exports = (sequelize, DataTypes) => {
   const product = sequelize.define(
     'productColor',
     {
-      name: {
-        type: DataTypes.STRING,
+      productId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      colorId: {
+        type: DataTypes.INTEGER,
         allowNull: false
       },
       discountId: {
         type: DataTypes.INTEGER,
         allowNull: true
+      },
+      price: {
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       active: {
         type: DataTypes.BOOLEAN,
@@ -36,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
     productColor.hasOne(models.discount)
     productColor.belongsToMany(models.order, {
       through: 'orderItems',
-      foreignKey: 'productId'
+      foreignKey: 'productColorId'
     })
     productColor.hasMany(models.image, {
       through: 'productColorImages',

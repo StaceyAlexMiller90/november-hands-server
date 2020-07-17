@@ -10,10 +10,6 @@ module.exports = (sequelize, DataTypes) => {
       addressId: {
         type: DataTypes.INTEGER,
         allowNull: false
-      },
-      type: {
-        type: DataTypes.INTEGER,
-        allowNull: false
       }
     },
     {}

@@ -6,26 +6,17 @@ module.exports = {
       'products',
       [
         {
-          name: 'Bucket Vase',
-          colorName: 'Marble',
-          price: 35,
-          discountId: 1,
-          active: true,
-          stockQuantity: 10,
-          categoryId: 1,
-          collectionId: 2,
+          name: 'Side Plate',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Incense Holder',
-          colorName: 'White',
-          price: 35,
-          discountId: 1,
-          active: true,
-          stockQuantity: 10,
-          categoryId: 1,
-          collectionId: 2,
+          name: 'Mug',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: 'Bucket Vase',
           createdAt: new Date(),
           updatedAt: new Date()
         }
