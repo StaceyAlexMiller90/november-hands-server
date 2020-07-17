@@ -41,7 +41,9 @@ module.exports = (sequelize, DataTypes) => {
   productColor.associate = function (models) {
     productColor.belongsTo(models.category)
     productColor.belongsTo(models.collection)
-    productColor.hasOne(models.discount)
+    productColor.belongsTo(models.product)
+    productColor.belongsTo(models.color)
+    productColor.belongsTo(models.discount)
     productColor.belongsToMany(models.order, {
       through: 'orderItems',
       foreignKey: 'productColorId'

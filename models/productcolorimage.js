@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   )
   productColorImage.associate = function (models) {
-    productColorImage.belongsTo(models.product)
+    productColorImage.belongsTo(models.productColor)
     productColorImage.belongsTo(models.image)
   }
   return productColorImage

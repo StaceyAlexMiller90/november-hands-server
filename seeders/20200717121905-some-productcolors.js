@@ -31,7 +31,7 @@ module.exports = {
         },
         {
           productId: 3,
-          colorId: 1,
+          colorId: 3,
           discountId: 1,
           price: 50,
           active: true,
@@ -43,7 +43,7 @@ module.exports = {
         },
         {
           productId: 2,
-          colorId: 2,
+          colorId: 1,
           discountId: 3,
           price: 25,
           active: true,

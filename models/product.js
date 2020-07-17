@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       through: 'productColors',
       foreignKey: 'productId'
     })
+    product.hasMany(models.productColor)
   }
   return product
 }

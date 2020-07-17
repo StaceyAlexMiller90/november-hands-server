@@ -25,6 +25,27 @@ module.exports = {
           imageViewOrder: 1,
           createdAt: new Date(),
           updatedAt: new Date()
+        },
+        {
+          productColorId: 2,
+          imageId: 1,
+          imageViewOrder: 1,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          productColorId: 3,
+          imageId: 1,
+          imageViewOrder: 1,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          productColorId: 5,
+          imageId: 1,
+          imageViewOrder: 1,
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}
