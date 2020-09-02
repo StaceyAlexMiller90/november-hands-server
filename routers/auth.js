@@ -17,14 +17,9 @@ router.post('/login', async (req, res, next) => {
 
     const user = await User.findOne({ where: { email } })
 
-    if (!user) {
+    if (!user || !bcrypt.compareSync(password, user.password)) {
       return res.status(400).send({
-        message: 'User with that email not found'
-      })
-    }
-    if (!bcrypt.compareSync(password, user.password)) {
-      return res.status(400).send({
-        message: 'Password incorrect'
+        message: 'Combination of email and password incorrect'
       })
     }
     delete user.dataValues['password'] // don't send back the password hash
