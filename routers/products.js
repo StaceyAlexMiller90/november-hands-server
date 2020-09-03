@@ -9,18 +9,17 @@ const Category = require('../models/').category
 
 const router = new Router()
 
-// See all products
+// See products
 router.get('/', async (req, res, next) => {
+  const limit = req.query.limit || 25
+  const offset = req.query.offset || 0
+
   const products = await Product.findAll({
+    limit,
+    offset,
     include: [Category, { model: ProductColor, include: [Color, Image, Collection, Discount] }]
   })
   res.send({ products: products })
 })
-
-//See products by Category
-router.get('/category')
-
-//See products by Collection
-router.get('/collection')
 
 module.exports = router
