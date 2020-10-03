@@ -7,6 +7,8 @@ const Discount = require('../models/').discount
 const Collection = require('../models/').collection
 const Category = require('../models/').category
 
+const shapeProducts = require('../helpers/index').shapeProducts
+
 const router = new Router()
 
 // See products
@@ -17,9 +19,26 @@ router.get('/', async (req, res, next) => {
   const products = await Product.findAll({
     limit,
     offset,
-    include: [Category, { model: ProductColor, include: [Color, Image, Collection, Discount] }]
+    // include: [Category, { model: ProductColor, include: [Color, Image, Collection, Discount] }]
+    include: [
+      {
+        model: Category,
+        attributes: ['name']
+      },
+      {
+        model: ProductColor,
+        attributes: ['id', 'price', 'stockQuantity'],
+        include: [
+          { model: Color, attributes: ['name'] },
+          { model: Image, attributes: ['path'] },
+          { model: Collection, attributes: ['name'] },
+          { model: Discount, attributes: ['description', 'discountPercentage'] }
+        ]
+      }
+    ]
   })
-  res.send({ products: products })
+  const formattedProducts = shapeProducts(products)
+  res.send({ products: formattedProducts })
 })
 
 module.exports = router

@@ -8,7 +8,6 @@ module.exports = {
         {
           productId: 3,
           colorId: 1,
-          discountId: 1,
           price: 50,
           active: true,
           stockQuantity: 10,
