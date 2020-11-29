@@ -16,26 +16,27 @@ router.get('/', async (req, res, next) => {
   const limit = req.query.limit || 25
   const offset = req.query.offset || 0
 
-  const products = await Product.findAll({
+  const products = await ProductColor.findAll({
     limit,
     offset,
+    attributes: ['id', 'price', 'stockQuantity'],
     include: [
       {
-        model: Category,
-        attributes: ['name']
-      },
-      {
-        model: ProductColor,
-        attributes: ['id', 'price', 'stockQuantity'],
+        model: Product,
         include: [
-          { model: Color, attributes: ['name'] },
-          { model: Image, attributes: ['path'] },
-          { model: Collection, attributes: ['name'] },
-          { model: Discount, attributes: ['description', 'discountPercentage'] }
+          {
+            model: Category,
+            attributes: ['name']
+          }
         ]
-      }
+      },
+      { model: Image, attributes: ['path'] },
+      { model: Color, attributes: ['name'] },
+      { model: Collection, attributes: ['name'] },
+      { model: Discount, attributes: ['description', 'discountPercentage'] }
     ]
   })
+
   const formattedProducts = shapeProducts(products)
   res.send({ products: formattedProducts })
 })
