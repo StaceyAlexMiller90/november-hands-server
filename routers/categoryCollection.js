@@ -1,9 +1,4 @@
 const { Router } = require('express')
-const Product = require('../models').product
-const ProductColor = require('../models').productColor
-const Color = require('../models').color
-const Image = require('../models').image
-const Discount = require('../models').discount
 const Collection = require('../models').collection
 const Category = require('../models').category
 

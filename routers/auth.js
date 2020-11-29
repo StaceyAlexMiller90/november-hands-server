@@ -55,7 +55,6 @@ router.post('/signup', async (req, res) => {
     if (error.name === 'SequelizeUniqueConstraintError') {
       return res.status(400).send({ message: 'There is an existing account with this email' })
     }
-
     return res.status(400).send({ message: 'Something went wrong, sorry' })
   }
 })

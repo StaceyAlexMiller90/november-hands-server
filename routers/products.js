@@ -11,7 +11,7 @@ const shapeProducts = require('../helpers/index').shapeProducts
 
 const router = new Router()
 
-// See products
+// Get products
 router.get('/', async (req, res, next) => {
   const limit = req.query.limit || 25
   const offset = req.query.offset || 0
@@ -19,7 +19,6 @@ router.get('/', async (req, res, next) => {
   const products = await Product.findAll({
     limit,
     offset,
-    // include: [Category, { model: ProductColor, include: [Color, Image, Collection, Discount] }]
     include: [
       {
         model: Category,
